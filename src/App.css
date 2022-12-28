@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+:root{
+  --white-color:#fff;
+  --primary-color:  #ef9273;
+  --secondary-color: #fef9f8;
+  --tertiary-color: #0d0d0d ;
+  --font-fam1: 'Alata', sans-serif;
 }
+body{
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p{
+  padding: 0px;
+  margin: 0px;
 }
+h1,h2,h3,h4,h5,h6{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h1,.h1{
+  
 }
+h2,.h2{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+h3,.h3{
+
+}
+h4,.h4{
+
+}
+h5,.h5{
+
+}
+h6,.h6{
+
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style-type: none;
+}
+a{
+  color: var(--tertiary-color) !important;
+}
+@media only screen and (min-width:320px) and (max-width:480px){
+  
+}
+@media only screen and (min-width:481px) and (max-width:768px){
+
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+
+}
+@media only screen and (min-width:1025px) and (max-width:1200px){
+
+}
+.main-navbar{
+  background-color: var(--secondary-color);
+  font-family: var(--font-fam1);
+  cursor: pointer;
+}
+.navbar-collapse{
+  flex-grow: 0 !important;
+}
+.navbar{
+  box-shadow: none !important;
+}
+.nav-item{
+  margin: 0 16px ;
+}
+.d-flex span{
+  margin-right: 4px;
+  margin-left: 16px;
 }
