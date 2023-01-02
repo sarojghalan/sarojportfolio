@@ -6,6 +6,7 @@ import { collection, query, where, onSnapshot } from "firebase/firestore";
 const Navbar = () => {
   const [navbarListData, setNavbarListData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [skillLoader , setSkillLoader] = useState(false)
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +21,55 @@ const Navbar = () => {
     setLoading(false);
   }, []);
 
-  console.log("navbar list data are : ", navbarListData);
+  useEffect(() => {
+
+  })
+
+  const navbarCss = navbarListData.map((get, keys) => {
+    if (get.id == "YrPd2sVMNDb7QMEuBJmm") {
+      return (
+        <>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {get.title}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Another action
+                </a>
+              </li>
+            </ul>
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            {get.title}
+          </a>
+        </li>
+      );
+    }
+  });
+
+  console.log(
+    "navbar list data are : ",
+    navbarListData.find((item) => item.id == "YrPd2sVMNDb7QMEuBJmm")
+  );
 
   return (
     <div className="main-navbar">
@@ -46,24 +95,14 @@ const Navbar = () => {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  {loading
-                    ? <p>loading</p>
-                    : navbarListData.map((get, keys) => {
-                        return <li class="nav-item">{get.title}</li>;
-                      })}
+                  {loading ? <p>loading</p> : navbarCss}
                 </ul>
-                <p className="d-flex"><span><i class="fa-solid fa-envelope"></i></span>codewithsaroj@gmail.com</p>
-                {/* <form class="d-flex">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form> */}
+                <p className="d-flex">
+                  <span>
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                  codewithsaroj@gmail.com
+                </p>
               </div>
             </div>
           </nav>

@@ -3,7 +3,7 @@
   --white-color:#fff;
   --primary-color:  #ef9273;
   --secondary-color: #fef9f8;
-  --tertiary-color: #0d0d0d ;
+  --black-color: #0d0d0d ;
   --font-fam1: 'Alata', sans-serif;
 }
 body{
@@ -73,4 +73,35 @@ a{
 .d-flex span{
   margin-right: 4px;
   margin-left: 16px;
+}
+.master-banner img{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.master-banner{
+  font-family: var(--font-fam1);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.master-banner button{
+  position: absolute;
+  top: 85%;
+  left: 7%;
+  border: 2px solid var(--secondary-color);
+  padding: 4px 12px;
+  color: var(--white-color);
+  font-weight: 500;
+  border-radius: 4px;
+  opacity: 80%;
+  background-color: var(--primary-color);
+}
+.master-banner button:hover{
+
+  background-color: var(--secondary-color);
+  color: var(--black-color);
+  opacity: 100%;
+  font-weight: bold;
 }
