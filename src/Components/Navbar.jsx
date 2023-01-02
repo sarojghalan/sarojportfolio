@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import firebaseDb from "../FirebaseConfig";
 import { deleteDoc, doc, setDoc } from "firebase/firestore";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
 
 const Navbar = () => {
   const [navbarListData, setNavbarListData] = useState([]);
+  const [mySkill, setMySkill] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [skillLoader , setSkillLoader] = useState(false)
+  const [skillLoader, setSkillLoader] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -22,8 +25,17 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-
-  })
+    setSkillLoader(true);
+    const q = query(collection(firebaseDb, "myskill"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const skill = [];
+      querySnapshot.forEach((doc) => {
+        skill.push(doc.data());
+      });
+      setMySkill(skill);
+      setSkillLoader(false);
+    });
+  }, []);
 
   const navbarCss = navbarListData.map((get, keys) => {
     if (get.id == "YrPd2sVMNDb7QMEuBJmm") {
@@ -41,16 +53,17 @@ const Navbar = () => {
               {get.title}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
+              { 
+                mySkill.map((get, keys) => {
+                  return (
+                    <li>
+                      <p class="dropdown-item">
+                        {get.skill}
+                      </p>
+                    </li>
+                  );
+                })
+              }
             </ul>
           </li>
         </>
@@ -66,10 +79,7 @@ const Navbar = () => {
     }
   });
 
-  console.log(
-    "navbar list data are : ",
-    navbarListData.find((item) => item.id == "YrPd2sVMNDb7QMEuBJmm")
-  );
+  console.log("navbar list data are : ", mySkill);
 
   return (
     <div className="main-navbar">
