@@ -56,6 +56,11 @@ a{
 @media only screen and (min-width:1025px) and (max-width:1200px){
 
 }
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  width: 300px;
+  padding: 12px 20px;
+  background-color: var(--secondary-color);
+}
 .main-navbar{
   background-color: var(--secondary-color);
   font-family: var(--font-fam1);
@@ -104,4 +109,21 @@ a{
   color: var(--black-color);
   opacity: 100%;
   font-weight: bold;
+}
+.dropdown-sub-list{
+  font-size: 12px;
+  font-style: italic;
+  opacity: 70%;
+  padding-left: 12px;
+}
+.dropdown-item-1{
+  padding-top: 4px !important;
+  padding-right: 12px;
+  color: var(--primary-color);
+}
+.span-span{
+  margin-right: 6px;
+}
+.dropdown-item{
+  color: var(--primary-color) !important;
 }
