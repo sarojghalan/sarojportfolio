@@ -22,8 +22,6 @@ const MasterBanner = () => {
     setLoading(false);
   }, []);
 
-  console.log("master Banner : ", masterBanner);
-
   return (
     <>
       {loading ? (

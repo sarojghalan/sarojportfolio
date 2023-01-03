@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 const Navbar = () => {
   const [navbarListData, setNavbarListData] = useState([]);
   const [mySkill, setMySkill] = useState([]);
+  const [myService , setMyService] = useState([])
   const [loading, setLoading] = useState(false);
   const [skillLoader, setSkillLoader] = useState(false);
 
@@ -37,13 +38,26 @@ const Navbar = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const q = query(collection(firebaseDb,"myservice"));
+    const unsubscribe = onSnapshot(q,(querySnapshot) => {
+      const service = [];
+      querySnapshot.forEach((doc) => {
+        service.push(doc.data());
+      });
+      setMyService(service);
+    })
+  })
+
+  console.log("skill data are : ",mySkill)
+
   const navbarCss = navbarListData.map((get, keys) => {
     if (get.id == "YrPd2sVMNDb7QMEuBJmm") {
       return (
         <>
-          <li class="nav-item dropdown">
+          <li className="nav-item dropdown" key={keys}>
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -52,26 +66,49 @@ const Navbar = () => {
             >
               {get.title}
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              { 
-                mySkill.map((get, keys) => {
-                  return (
-                    <li>
-                      <p class="dropdown-item">
-                        {get.skill}
-                      </p>
-                    </li>
-                  );
-                })
-              }
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              {mySkill.map((get, keys) => {
+                return (
+                  <li key={keys}>
+                    <p className="dropdown-item">{get.skill}</p>
+                  </li>
+                );
+              })}
             </ul>
           </li>
         </>
       );
+    }else if(get.id == "64WPvgzSwOnwPixS0Z28"){
+      return(
+<>
+          <li className="nav-item dropdown" key={keys}>
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {get.title}
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              {myService.map((get, keys) => {
+                return (
+                  <li key={keys}>
+                    <p className="dropdown-item">{get.title}</p>
+                    <p className="dropdown-sub-list">{get.description_title}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        </>
+      )
     } else {
       return (
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item" key={keys}>
+          <a className="nav-link" href="#">
             {get.title}
           </a>
         </li>
@@ -79,19 +116,17 @@ const Navbar = () => {
     }
   });
 
-  console.log("navbar list data are : ", mySkill);
-
   return (
     <div className="main-navbar">
       <div className="container-fluid">
         <div className="container">
-          <nav class="navbar navbar-expand-lg ">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+          <nav className="navbar navbar-expand-lg ">
+            <div className="container-fluid">
+              <a className="navbar-brand" href="#">
                 Saroj G.
               </a>
               <button
-                class="navbar-toggler"
+                className="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -99,17 +134,17 @@ const Navbar = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon">
-                  <i class="fa-solid fa-bars"></i>
+                <span className="navbar-toggler-icon">
+                  <i className="fa-solid fa-bars"></i>
                 </span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   {loading ? <p>loading</p> : navbarCss}
                 </ul>
                 <p className="d-flex">
                   <span>
-                    <i class="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-envelope"></i>
                   </span>
                   codewithsaroj@gmail.com
                 </p>
