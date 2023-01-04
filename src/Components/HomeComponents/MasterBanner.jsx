@@ -4,10 +4,11 @@ import { collection, query, onSnapshot } from "firebase/firestore";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import { imageListClasses } from "@mui/material";
-import mountain from '../../Assests/mountain.png'
-import house from '../../Assests/house.png';
-import bird from '../../Assests/birds2.png';
-import sun from '../../Assests/sun.png';
+import mountain from "../../Assests/mountain.png";
+import house from "../../Assests/house.png";
+import bird from "../../Assests/birds2.png";
+import sun from "../../Assests/sun.png";
+import bulb from "../../Assests/bulb.png";
 
 const MasterBanner = () => {
   const [masterBanner, setMasterBanner] = useState([]);
@@ -34,12 +35,24 @@ const MasterBanner = () => {
         </Stack>
       ) : (
         <div className="master-banner" id="overlay">
-          <img className="master-banner-img" src={masterBanner[0]?.masterBanner} />
-          <button>Get In Touch</button>
-          <img className="house-img" src={house} alt="" />
+          <img
+            className="master-banner-img"
+            src={masterBanner[0]?.masterBanner}
+          />
+          <button>See My Works</button>
+          {/* <img className="house-img" src={house} alt="" /> */}
           <img className="mountain-img" src={mountain} alt="" />
           <img className="sun-img" src={sun} alt="" />
           <img className="bird-img" src={bird} alt="" />
+          <div className="master-banner-content">
+            <div className="container">
+            <div className="saroj-info">
+              <h3>Saroj G.</h3>
+              <h4>Do You Have an IDEA <span className="banner-span"><img src={bulb} alt="" className="idea" /></span> ?</h4>
+              <h5>I can BUILD it</h5>
+            </div>
+            </div>
+          </div>
         </div>
       )}
     </>

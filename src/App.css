@@ -77,6 +77,28 @@ a{
     font-size: 20px !important;
     font-weight: bold !important;
   }
+  .master-banner-content{
+    position: absolute !important;
+    left: 1% !important;
+    padding: 36px !important;
+    top:-2% !important;
+    text-align: justify !important;
+  }
+  .bird-img{
+    position: absolute;
+    top: 50%;
+    left: 20% !important;
+  }
+  .mountain-img{
+    position: absolute;
+    top: 35%;
+    left: 10% !important;
+  }
+  .sun-img{
+    position: absolute;
+    top: 30%;
+    left: 80% !important;
+  }
 }
 @media only screen and (min-width:481px) and (max-width:768px){
   .main{
@@ -106,30 +128,79 @@ a{
     font-size: 28px !important;
     font-weight: bold !important;
   }
+  .master-banner-content{
+    position: absolute !important;
+    left: 1% !important;
+    padding: 36px !important;
+    top:-2% !important;
+    text-align: justify !important;
+  }
+  .master-banner-content p{
+    background-color: var(--off-color);
+    color: var(--white-color);
+    opacity: 60%;
+    padding: 6px;
+  }
+  .bird-img{
+    position: absolute;
+    top: 50%;
+    left: 20% !important;
+  }
+  .mountain-img{
+    position: absolute;
+    top: 35%;
+    left: 20% !important;
+  }
+  .sun-img{
+    position: absolute;
+    top: 20% !important;
+    left: 80% !important;
+  }
 }
 @media only screen and (min-width:769px) and (max-width:1024px){
-
+  .master-banner-content{
+    position: absolute !important;
+    left: 1% !important;
+    padding: 16px !important;
+    top:-2% !important;
+    text-align: justify !important;
+  }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px){
 
 }
+.master-banner-content{
+  position: absolute;
+  left: 1%;
+  padding: 36px;
+  top:12%;
+  text-align: justify !important;
+}
+.master-banner-content p{
+  line-height: 2;
+  font-size: 14px!important;
+  letter-spacing: 1px;
+  font-style: italic;
+}
 .house-img{
 position: absolute;
-height: 50px;
 top: 50%;
-width: 50px;
-left: 10%;
-object-fit: contain;
-z-index: 1000;
+left: 40%;
 }
 .mountain-img{
   position: absolute;
+  top: 35%;
+  left: 60%;
 }
 .sun-img{
   position: absolute;
+  top: 30%;
+  left: 70%;
 }
 .bird-img{
   position: absolute;
+  top: 50%;
+  left: 90%;
 }
 .main{
   font-family: var(--font-fam1);
@@ -195,7 +266,7 @@ z-index: 1000;
   margin-left: 16px;
 }
 .master-banner-img{
-  height: 500px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -208,14 +279,13 @@ z-index: 1000;
 }
 .master-banner button{
   position: absolute;
-  top: 85%;
+  top: 80%;
   left: 7%;
-  border: 2px solid var(--secondary-color);
-  padding: 4px 12px;
+  border: none;
+  padding: 8px 26px;
   color: var(--white-color);
   font-weight: 500;
   border-radius: 4px;
-  opacity: 80%;
   background-color: var(--primary-color);
 }
 .master-banner button:hover{
