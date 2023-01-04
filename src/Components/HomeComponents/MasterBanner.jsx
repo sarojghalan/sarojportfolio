@@ -4,6 +4,10 @@ import { collection, query, onSnapshot } from "firebase/firestore";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import { imageListClasses } from "@mui/material";
+import mountain from '../../Assests/mountain.png'
+import house from '../../Assests/house.png';
+import bird from '../../Assests/birds2.png';
+import sun from '../../Assests/sun.png';
 
 const MasterBanner = () => {
   const [masterBanner, setMasterBanner] = useState([]);
@@ -30,8 +34,12 @@ const MasterBanner = () => {
         </Stack>
       ) : (
         <div className="master-banner" id="overlay">
-          <img src={masterBanner[0]?.masterBanner} alt="master banner" />
+          <img className="master-banner-img" src={masterBanner[0]?.masterBanner} />
           <button>Get In Touch</button>
+          <img className="house-img" src={house} alt="" />
+          <img className="mountain-img" src={mountain} alt="" />
+          <img className="sun-img" src={sun} alt="" />
+          <img className="bird-img" src={bird} alt="" />
         </div>
       )}
     </>

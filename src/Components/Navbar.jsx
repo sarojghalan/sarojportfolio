@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 const Navbar = () => {
   const [navbarListData, setNavbarListData] = useState([]);
   const [mySkill, setMySkill] = useState([]);
-  const [myService , setMyService] = useState([])
+  const [myService, setMyService] = useState([]);
   const [loading, setLoading] = useState(false);
   const [skillLoader, setSkillLoader] = useState(false);
 
@@ -34,22 +34,20 @@ const Navbar = () => {
         skill.push(doc.data());
       });
       setMySkill(skill);
-      setSkillLoader(false);
     });
+    setSkillLoader(false);
   }, []);
 
   useEffect(() => {
-    const q = query(collection(firebaseDb,"myservice"));
-    const unsubscribe = onSnapshot(q,(querySnapshot) => {
+    const q = query(collection(firebaseDb, "myservice"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const service = [];
       querySnapshot.forEach((doc) => {
         service.push(doc.data());
       });
       setMyService(service);
-    })
-  })
-
-  console.log("skill data are : ",mySkill)
+    });
+  }, []);
 
   const navbarCss = navbarListData.map((get, keys) => {
     if (get.id == "YrPd2sVMNDb7QMEuBJmm") {
@@ -70,7 +68,12 @@ const Navbar = () => {
               {mySkill.map((get, keys) => {
                 return (
                   <li key={keys}>
-                    <p className="dropdown-item"><span className="span-span"><i class="fa-solid fa-feather-pointed"></i></span>{get.skill}</p>
+                    <p className="dropdown-item">
+                      <span className="span-span">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                      </span>
+                      {get.skill}
+                    </p>
                   </li>
                 );
               })}
@@ -78,9 +81,9 @@ const Navbar = () => {
           </li>
         </>
       );
-    }else if(get.id == "64WPvgzSwOnwPixS0Z28"){
-      return(
-<>
+    } else if (get.id == "64WPvgzSwOnwPixS0Z28") {
+      return (
+        <>
           <li className="nav-item dropdown" key={keys}>
             <a
               className="nav-link dropdown-toggle"
@@ -96,7 +99,12 @@ const Navbar = () => {
               {myService.map((get, keys) => {
                 return (
                   <li key={keys}>
-                    <p className="dropdown-item-1"><span className="span-span"><i class="fa-solid fa-feather-pointed"></i></span>{get.title}</p>
+                    <p className="dropdown-item-1">
+                      <span className="span-span">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                      </span>
+                      {get.title}
+                    </p>
                     <p className="dropdown-sub-list">{get.description_title}</p>
                   </li>
                 );
@@ -104,7 +112,7 @@ const Navbar = () => {
             </ul>
           </li>
         </>
-      )
+      );
     } else {
       return (
         <li className="nav-item" key={keys}>
@@ -138,7 +146,10 @@ const Navbar = () => {
                   <i className="fa-solid fa-bars"></i>
                 </span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   {loading ? <p>loading</p> : navbarCss}
                 </ul>
