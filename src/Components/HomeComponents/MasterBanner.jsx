@@ -48,8 +48,8 @@ const MasterBanner = () => {
             <div className="container">
             <div className="saroj-info">
               <h3>Saroj G.</h3>
-              <h4>Do You Have an IDEA <span className="banner-span"><img src={bulb} alt="" className="idea" /></span> ?</h4>
-              <h5>I can BUILD it</h5>
+              <h4>Do You Have an <span className="banner-span">IDEA</span> ?</h4>
+              <h5>I Can <span className="banner-span">BUILD</span> It .</h5>
             </div>
             </div>
           </div>

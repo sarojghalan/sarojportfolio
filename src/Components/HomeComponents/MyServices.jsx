@@ -9,6 +9,20 @@ const MyServices = () => {
   const image1 = useRef(null);
   const [imageExists, setImageExists] = useState(false);
   const [imageExists1, setImageExists1] = useState(false);
+  const [serviceData, setServiceData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const q = query(collection(firebaseDb, "myservice"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const service = [];
+      querySnapshot.forEach((doc) => {
+        service.push(doc.data());
+      });
+      setServiceData(service);
+    });
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     if (imageExists) {
@@ -23,7 +37,7 @@ const MyServices = () => {
       });
       observer.observe(image.current);
       return () => {
-        // observer.disconnect();
+        observer.disconnect();
       };
     }
   }, [imageExists]);
@@ -45,21 +59,7 @@ const MyServices = () => {
     }
   }, [imageExists1]);
 
-  const [serviceData, setServiceData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    const q = query(collection(firebaseDb, "myservice"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const service = [];
-      querySnapshot.forEach((doc) => {
-        service.push(doc.data());
-      });
-      setServiceData(service);
-    });
-    setLoading(false);
-  }, []);
 
   console.log("service : ", serviceData);
 
@@ -93,7 +93,7 @@ const MyServices = () => {
                             <img src={get.image} alt="" />
                           </div>
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-md-6">
                           <div
                             ref={(el) => {
                               image1.current = el;
@@ -116,12 +116,16 @@ const MyServices = () => {
                             </button>
                           </div>
                         </div>
+                        <div className="col-md-1">
+
+                        </div>
                       </div>
                     </div>
                   ) : (
                     <div className="service-card" key={keys}>
                       <div className="row">
-                        <div className="col-md-7">
+                      <div className="col-md-1"></div>
+                        <div className="col-md-6">
                           <div
                             ref={(el) => {
                               image.current = el;

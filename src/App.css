@@ -53,7 +53,7 @@ a{
   .main-sec-title{
     margin-bottom: 2px !important;
   }
-  .master-banner img{
+  .master-banner-img{
     height: 350px !important;
   }
   .service-image img{
@@ -86,7 +86,7 @@ a{
   }
   .bird-img{
     position: absolute;
-    top: 50%;
+    top: 50% !important;
     left: 20% !important;
   }
   .mountain-img{
@@ -98,6 +98,14 @@ a{
     position: absolute;
     top: 30%;
     left: 80% !important;
+  }
+  .master-banner button{
+    left: 12% !important;
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+  }
+  .about-me-description{
+    padding: 36px 0 !important;
   }
 }
 @media only screen and (min-width:481px) and (max-width:768px){
@@ -132,7 +140,7 @@ a{
     position: absolute !important;
     left: 1% !important;
     padding: 36px !important;
-    top:-2% !important;
+    top:12% !important;
     text-align: justify !important;
   }
   .master-banner-content p{
@@ -143,7 +151,7 @@ a{
   }
   .bird-img{
     position: absolute;
-    top: 50%;
+    top: 55% !important;
     left: 20% !important;
   }
   .mountain-img{
@@ -156,14 +164,44 @@ a{
     top: 20% !important;
     left: 80% !important;
   }
+  .master-banner button{
+    left: 12% !important;
+  }
+  .about-me-description{
+    padding: 0 36px !important;
+  }
 }
 @media only screen and (min-width:769px) and (max-width:1024px){
   .master-banner-content{
     position: absolute !important;
     left: 1% !important;
-    padding: 16px !important;
-    top:-2% !important;
+    padding: 36px !important;
+    top:12% !important;
     text-align: justify !important;
+  }
+  .master-banner-content p{
+    background-color: var(--off-color);
+    color: var(--white-color);
+    opacity: 60%;
+    padding: 6px;
+  }
+  .bird-img{
+    position: absolute;
+    top: 55% !important;
+    left: 20% !important;
+  }
+  .mountain-img{
+    position: absolute;
+    top: 35%;
+    left: 20% !important;
+  }
+  .sun-img{
+    position: absolute;
+    top: 20% !important;
+    left: 80% !important;
+  }
+  .master-banner button{
+    left: 12% !important;
   }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px){
@@ -171,9 +209,9 @@ a{
 }
 .master-banner-content{
   position: absolute;
-  left: 1%;
+  left: 12%;
   padding: 36px;
-  top:12%;
+  top:15%;
   text-align: justify !important;
 }
 .master-banner-content p{
@@ -199,8 +237,17 @@ left: 40%;
 }
 .bird-img{
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 90%;
+}
+.saroj-info h4,h5{
+  font-style: italic;
+  opacity: 80%;
+}
+.banner-span{
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: bold;
 }
 .main{
   font-family: var(--font-fam1);
@@ -220,11 +267,10 @@ left: 40%;
 .main-title{
   text-align: center;
   margin-bottom: 64px;  
-  color: var(--off-color);
+  color: var(--primary-color);
 }
 .main-title h3{
   font-size: 36px;
-  text-decoration: underline;
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   width: 300px;
@@ -280,7 +326,7 @@ left: 40%;
 .master-banner button{
   position: absolute;
   top: 80%;
-  left: 7%;
+  left: 15%;
   border: none;
   padding: 8px 26px;
   color: var(--white-color);
@@ -371,12 +417,29 @@ left: 40%;
 }
 .button-main{
   border: none;
-  background-color: var(--primary-color);
-  padding: 4px 16px;
+  padding: 8px 26px;
   color: var(--white-color);
-  border-radius: 8px;
-  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: var(--primary-color);
 }
 .button-main:hover{
   background-color: var(--black-color);
+}
+.about-me-img{
+  text-align: center;
+}
+.about-me-img img{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+.about-me-description{
+  margin: 36px 0;
+}
+.about-me-description p{
+  color: var(--off-color);
+  font-style: italic;
+  text-align: justify;
+  letter-spacing: 0.6px;
 }
