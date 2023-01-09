@@ -11,6 +11,7 @@ const MyServices = () => {
   const [imageExists1, setImageExists1] = useState(false);
   const [serviceData, setServiceData] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     const q = query(collection(firebaseDb, "myservice"));
@@ -28,6 +29,7 @@ const MyServices = () => {
     if (imageExists) {
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
+          console.log("intersected");
           image.current.classList.add(
             "animate__animated",
             "animate__backInLeft"
@@ -43,25 +45,22 @@ const MyServices = () => {
   }, [imageExists]);
   useEffect(() => {
     if (imageExists1) {
-      const observer = new IntersectionObserver((entries) => {
+      const observer1 = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
+          console.log("intersected1");
           image1.current.classList.add(
             "animate__animated",
             "animate__backInRight"
           );
-          observer.disconnect();
+          observer1.disconnect();
         }
       });
-      observer.observe(image1.current);
+      observer1.observe(image1.current);
       return () => {
-        observer.disconnect();
+        observer1.disconnect();
       };
     }
   }, [imageExists1]);
-
-
-
-  console.log("service : ", serviceData);
 
   return (
     <div className="main">
@@ -127,11 +126,12 @@ const MyServices = () => {
                       <div className="col-md-1"></div>
                         <div className="col-md-6">
                           <div
+                          
                             ref={(el) => {
                               image.current = el;
                               setImageExists(true);
                             }}
-                            className="service-content-1"
+                            className="service-content-1 dddddffffdff"
                           >
                             <div className="main-sec-title-2">
                               <h4>
@@ -153,7 +153,7 @@ const MyServices = () => {
                               image1.current = el;
                               setImageExists1(true);
                             }}
-                            className="service-image"
+                            className="service-image  dddddffffdff"
                           >
                             <img src={get.image} alt="" />
                           </div>

@@ -107,6 +107,12 @@ a{
   .about-me-description{
     padding: 36px 0 !important;
   }
+  .project-img{
+    width: 80% !important;
+  }
+  .project-img{
+    width: 90% !important;
+  }
 }
 @media only screen and (min-width:481px) and (max-width:768px){
   .main{
@@ -170,6 +176,9 @@ a{
   .about-me-description{
     padding: 0 36px !important;
   }
+  .project-img{
+    width: 90% !important;
+  }
 }
 @media only screen and (min-width:769px) and (max-width:1024px){
   .master-banner-content{
@@ -206,6 +215,26 @@ a{
 }
 @media only screen and (min-width:1025px) and (max-width:1200px){
 
+}
+.home-main{
+  position: relative;
+}
+.home-ul{
+  position: fixed;
+  top: 38%;
+  z-index: 1000;
+}
+.home-ul li{
+  background-color: var(--primary-color);
+  margin-bottom: 8px;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+.home-p{
+  color: var(--secondary-color);
+}
+.home-span{
+  display: none;
 }
 .master-banner-content{
   position: absolute;
@@ -442,4 +471,65 @@ left: 40%;
   font-style: italic;
   text-align: justify;
   letter-spacing: 0.6px;
+}
+.myproject-content{
+  text-align: center !important;
+}
+.project-slider{
+  text-align: center;
+}
+.project-img{
+  height: 400px;
+  width: 60%;
+  object-fit: contain;
+}
+.project-title{
+  font-weight: 500;
+  color: var(--off-color);
+  font-size: 20px;
+}
+.project-title span{
+  color: var(--primary-color);
+  margin: 0px 12px;
+  font-size: 12px;
+}
+.slick-slide img {
+  display: initial !important;
+}
+.slick-prev:before {
+  display: none !important;
+}
+.slick-next:before {
+  display: none !important;
+}
+.slider-arrow ul>li{
+  display:inline-block;
+}
+.slider-p{
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  margin: 12px 26px 0px;
+  font-size: 14px !important;
+  padding: 4px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.slider-span1{
+ margin-right: 8px;
+}
+.slider-span2{
+margin-left: 8px;
+}
+.footer-main{
+  /* background-color: var(--secondary-color); */
+  font-family: var(--font-fam1);
+  padding: 36px 0px;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.footer-content{
+  text-align: center;
 }
