@@ -59,7 +59,7 @@ const AboutMe = () => {
   }, [imageExists1]);
 
   return (
-    <div className="main">
+    <div className="main main-1">
       <div className="container">
         <div className="main-title">
           <h3>{aboutMe[0]?.title}</h3>

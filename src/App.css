@@ -6,6 +6,7 @@
   --secondary-color: #fef9f8;
   --black-color: #0d0d0d ;
   --off-color:#919191;
+  --offwhite-color:#f2f2f3;
   --font-fam1: 'Alata', sans-serif;
 }
 body{
@@ -113,8 +114,26 @@ a{
   .project-img{
     width: 90% !important;
   }
+  .footer-ul{
+    padding: 0px !important;
+  }
+  .footer{
+    margin: 6px 0px 6px !important;
+  }
+  .footer-main{
+    height: 600px !important;
+  }
+  .footer-ul li>p>span{
+    font-size: 16px !important;
+  }
 }
 @media only screen and (min-width:481px) and (max-width:768px){
+  .footer-main{
+    height: 600px !important;
+  }
+  .footer{
+    margin: 6px 0px 6px !important;
+  }
   .main{
     padding: 30px 0px !important;
   }
@@ -179,6 +198,12 @@ a{
   .project-img{
     width: 90% !important;
   }
+  .footer-ul{
+    padding: 0px !important;
+  }
+  .footer-ul li>p>span{
+    font-size: 14px !important;
+  }
 }
 @media only screen and (min-width:769px) and (max-width:1024px){
   .master-banner-content{
@@ -215,6 +240,13 @@ a{
 }
 @media only screen and (min-width:1025px) and (max-width:1200px){
 
+}
+.logo{
+  object-fit: contain;
+  height: 80px;
+}
+.main-1{
+  background-color: var(--offwhite-color) !important;
 }
 .home-main{
   position: relative;
@@ -521,15 +553,53 @@ left: 40%;
 margin-left: 8px;
 }
 .footer-main{
-  /* background-color: var(--secondary-color); */
+ background-image: url('../src/Assests/footerback.png');
   font-family: var(--font-fam1);
-  padding: 36px 0px;
+  padding: 86px 0px 0px;
   background-position: center;
-  background-size: cover;
+  background-size: cover ;
   height: 400px;
   background-repeat: no-repeat;
-  width: 100%;
+  margin-bottom: -1px;
 }
 .footer-content{
+  text-align: center;
+}
+.footer-content img{
+  height: 150px;
+  width: 100%;
+  object-fit: contain;
+}
+.footer-content h4{
+  margin:0px 0px 16px
+}
+.footer-ul{
+  text-align: justify !important;
+  padding: 0px 26px;
+}
+.footer{
+  text-align: center;
+  letter-spacing: 1px;
+}
+.footer span{
+  color: var(--primary-color);
+}
+.footer-ul li>p{
+  font-size: 16px!important;
+  opacity: 70%;
+}
+.footer-ul li{
+  line-height: 1.8;
+}
+.footer-ul li>p>span{
+  color: var(--primary-color);
+}
+.about-slider{
+  text-align: center;
+}
+.slider-arrow-1{
+  margin-top: 32px;
+}
+.cv-main{
   text-align: center;
 }

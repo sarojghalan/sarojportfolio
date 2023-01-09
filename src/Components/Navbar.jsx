@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import firebaseDb from "../FirebaseConfig";
+import logo from "../Assests/logosaroj.png";
 import { deleteDoc, doc, setDoc } from "firebase/firestore";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [navbarListData, setNavbarListData] = useState([]);
@@ -116,9 +118,11 @@ const Navbar = () => {
     } else {
       return (
         <li className="nav-item" key={keys}>
-          <a className="nav-link" href="#">
-            {get.title}
-          </a>
+          {get.id == "5y41csy64oWqYHLHEeFa" ? (
+            <NavLink className="nav-link" to="/about_me">{get.title}</NavLink>
+          ) : get.id== "fMGmnDck4PQPuNUG2Evj" && (
+            <NavLink className="nav-link" to="my_projects">{get.title}</NavLink>
+          )}
         </li>
       );
     }
@@ -130,9 +134,9 @@ const Navbar = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">
-                Saroj G.
-              </a>
+              <NavLink className="navbar-brand" to="/">
+                <img className="logo" src={logo} alt="" />
+              </NavLink>
               <button
                 className="navbar-toggler"
                 type="button"

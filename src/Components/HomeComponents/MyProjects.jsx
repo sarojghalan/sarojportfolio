@@ -36,7 +36,7 @@ const MyProjects = () => {
     slidesToScroll: 1,
   };
   return (
-    <div className="main">
+    <div className="main ">
       <div className="container">
         <div className="main-title">
           <h3>Welcome To My Recent Works</h3>

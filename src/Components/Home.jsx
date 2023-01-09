@@ -1,6 +1,5 @@
 import React from "react";
 import AboutMe from "./HomeComponents/AboutMe";
-import Footer from "./HomeComponents/Footer";
 import InspirationBanner from "./HomeComponents/InspirationBanner";
 import MasterBanner from "./HomeComponents/MasterBanner";
 import MyProjects from "./HomeComponents/MyProjects";
@@ -26,7 +25,7 @@ const Home = () => {
           </p>
           </a>
         </li>
-        <li>
+        <li> 
         <a href="https://www.facebook.com/xaroz.tmng/" target="_blank">
           <p className="home-p">
             {" "}
@@ -48,7 +47,6 @@ const Home = () => {
       <MyServices />
       <AboutMe />
       <MyProjects />
-      <Footer />
     </div>
   );
 };
