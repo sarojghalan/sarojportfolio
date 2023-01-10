@@ -27,8 +27,6 @@ const About = () => {
     setLoading(false);
   }, []);
 
-  console.log("my skill : ", mySkill);
-
   var settings = {
     dots: false,
     infinite: true,
@@ -89,6 +87,7 @@ const About = () => {
     ],
   };
 
+  const [id , setID] = useState("");
   const [modalTopic , setModelTopic] = useState("");
   const [modalDescription , setModalDescription] = useState("");
 
@@ -96,7 +95,18 @@ const About = () => {
     e.preventDefault();
     setModalDescription(description);
     setModelTopic(skill);
+    setID(key);
   };
+
+//   const [skillDescription , setSkillDescription] = useState("");
+
+//   useEffect(() => {
+//     setSkillDescription(modalDescription)
+//   },[modalDescription])
+
+  console.log("ID : ",id)
+  console.log("modal topic : ",modalTopic);
+  console.log("modal description : ",modalDescription);
 
   return (
     <>
@@ -115,7 +125,7 @@ const About = () => {
                     <button
                       className="button-main"
                       data-bs-toggle="modal"
-                      data-bs-target={`#${get?.skill}`}
+                      data-bs-target={`#a${keys}`}
                       onClick={(e)=>skillHandler(e,get?.description,get?.skill,keys)}
                     >
                       {get?.skill}
@@ -125,35 +135,35 @@ const About = () => {
               })}
             </Slider>
             {skillHandler && <div
-              class="modal fade"
-              id={modalTopic}
+              className="modal fade"
+              id={`a${id}`}
               tabindex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog">
-                <div class="modal-content modal-dialog-centered">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
+              <div className="modal-dialog">
+                <div className="modal-content modal-dialog-centered">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
                       {modalTopic}
                     </h5>
                     <button
                       type="button"
-                      class="btn-close"
+                      className="btn-close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="modal-body">{setModalDescription}</div>
-                  <div class="modal-footer">
+                  <div className="modal-body">{modalDescription}</div>
+                  <div className="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-bs-dismiss="modal"
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal">
                       Ok
                     </button>
                   </div>
@@ -168,7 +178,7 @@ const About = () => {
                     onClick={() => slider?.current?.slickPrev()}
                   >
                     <span className="slider-span1">
-                      <i class="fa-solid fa-circle-left"></i>
+                      <i className="fa-solid fa-circle-left"></i>
                     </span>
                     Prev
                   </p>
