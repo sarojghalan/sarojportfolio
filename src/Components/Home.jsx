@@ -2,10 +2,12 @@ import React from "react";
 import AboutMe from "./HomeComponents/AboutMe";
 import InspirationBanner from "./HomeComponents/InspirationBanner";
 import MasterBanner from "./HomeComponents/MasterBanner";
+import MyInfo from "./HomeComponents/MyInfo";
 import MyProjects from "./HomeComponents/MyProjects";
 import MyServices from "./HomeComponents/MyServices";
 
 const Home = () => {
+
   return (
     <div className="home-main">
       <ul className="home-ul">
@@ -44,6 +46,7 @@ const Home = () => {
       </ul>
       <MasterBanner />
       <InspirationBanner />
+      <MyInfo />
       <MyServices />
       <AboutMe />
       <MyProjects />

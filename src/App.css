@@ -6,6 +6,7 @@
   --secondary-color: #fef9f8;
   --black-color: #0d0d0d;
   --off-color: #919191;
+  --genuine-color:#fcf3ec;
   --offwhite-color: #f2f2f3;
   --font-fam1: "Alata", sans-serif;
 }
@@ -104,7 +105,7 @@ a {
     left: 80% !important;
   }
   .master-banner button {
-    left: 12% !important;
+    left: 12% !important; 
     font-size: 12px !important;
     padding: 4px 12px !important;
   }
@@ -243,6 +244,42 @@ a {
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
 }
+.welcome-div{
+  font-family: var(--font-fam1);
+  padding: 64px 0px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.8;
+}
+.welcome-span{
+  color: var(--primary-color);
+  font-size: 22px;
+}
+.card-skill{
+  text-align: center;
+  margin: 36px 36px 0px;
+  border: 1px solid var(--off-color);
+  padding: 26px 0px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+.card-skill img{
+  height: 120px;
+  width: 80%;
+  object-fit: contain;
+  border-radius: 8px !important;
+  transition: .5s ease;
+}
+.card-skill:hover .card-skill img{
+  transform: rotate(360deg);
+  transition: all 0.8s ease-in-out 0s;
+}
+.card-skill p{
+  color: var(--secondary-color);
+  margin-top: 16px;
+  font-weight: bold;
+}
 .logo {
   object-fit: contain;
   height: 80px;
@@ -316,7 +353,7 @@ h5 {
 .main {
   font-family: var(--font-fam1);
   padding: 64px 0;
-  /* background-color: var(--secondary-color); */
+  /* background-color: var(--genuine-color); */
 }
 .main-sec-title {
   text-align: left;
@@ -465,16 +502,14 @@ h5 {
 }
 .service-content p {
   font-size: 16px;
-  font-style: italic;
   opacity: 80%;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
   margin-bottom: 16px;
 }
 .service-content-1 p {
   font-size: 16px;
-  font-style: italic;
+  letter-spacing: 1px;
   opacity: 80%;
-  letter-spacing: 0.6px;
   margin-bottom: 16px;
 }
 .button-main {
@@ -553,6 +588,9 @@ h5 {
 .slider-span2 {
   margin-left: 8px;
 }
+.button-main span{
+  margin: 0px 8px;
+}
 .footer-main {
   background-image: url("../src/Assests/footerback.png");
   font-family: var(--font-fam1);
@@ -600,6 +638,7 @@ h5 {
 }
 .slider-arrow-1 {
   margin-top: 32px;
+  margin-bottom: 32px;
 }
 .cv-main {
   text-align: center;
@@ -609,3 +648,61 @@ h5 {
   font-family: var(--font-fam1);
   padding: 0px 36px;
 }
+.about-back{
+  background-image: url('../src/Assests/banner1.png');
+}
+.my-service-img{
+  border-radius: 12px;
+  text-align: center;
+}
+.my-service-img img{
+  height:400px ;
+  width: 80%;
+  object-fit: contain;
+}
+.my-service-content {
+  padding: 26px 0;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+.my-service-content-1{
+  text-align: justify;
+  letter-spacing: 1px;
+  padding: 26px 0;
+}
+.saroj-g{
+  text-align: center !important;
+  color: var(--off-color);
+  letter-spacing: 1px;
+}
+.saroj-g p{
+  letter-spacing: 1px;
+  color: #cb5933;
+}
+.hire-me-btn{
+  margin-top: 16px;
+}
+.modal-header{
+  text-align: center !important;
+}
+.hire-form{
+  margin: 26px 0px;
+}
+.hire-input{
+  margin-bottom: 16px;
+}
+.hire-input label{
+  color: var(--primary-color);
+  margin-bottom: 6px;
+}
+.hire-input input{
+  border-radius: 8px;
+  padding: 4px 16px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--primary-color) !important;
+}
+/* .hire-input input:focus{
+  border: none;
+  border-bottom: 2px solid var(--primary-color) !important;
+} */

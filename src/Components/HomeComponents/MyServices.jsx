@@ -69,12 +69,14 @@ const MyServices = () => {
           <div className="main-title">
             <h3>My Services</h3>
           </div>
-          {loading ? (
+          {loading ? 
+          (
             <Stack spacing={1}>
               <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
               <Skeleton variant="rectangular" width={210} height={400} />
             </Stack>
-          ) : (
+          ) : 
+          (
             serviceData.map((get, keys) => {
               return (
                 <>
@@ -109,7 +111,7 @@ const MyServices = () => {
                               </h4>
                             </div>
                             <p>{get.description}</p>
-                            <button className="button-main">
+                            <button className="button-main"> 
                               {" "}
                               Want to Read More
                             </button>

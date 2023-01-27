@@ -70,12 +70,14 @@ const Navbar = () => {
               {mySkill.map((get, keys) => {
                 return (
                   <li key={keys}>
+                    <NavLink to="/about_me">
                     <p className="dropdown-item">
                       <span className="span-span">
                         <i class="fa-solid fa-feather-pointed"></i>
                       </span>
                       {get.skill}
                     </p>
+                    </NavLink>
                   </li>
                 );
               })}
@@ -101,13 +103,15 @@ const Navbar = () => {
               {myService.map((get, keys) => {
                 return (
                   <li key={keys}>
+                    <NavLink to="my_services">
                     <p className="dropdown-item-1">
                       <span className="span-span">
                         <i class="fa-solid fa-feather-pointed"></i>
                       </span>
                       {get.title}
                     </p>
-                    <p className="dropdown-sub-list">{get.description_title}</p>
+                    </NavLink>
+                    <NavLink to="my_services"><p className="dropdown-sub-list">{get.description_title}</p></NavLink>
                   </li>
                 );
               })}
